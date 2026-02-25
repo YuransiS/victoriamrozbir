@@ -63,7 +63,7 @@
     <style>
         body { background-color: #F9F9F9; color: #0F0F0F; overflow-x: hidden; }
         
-        /* Стилі інпутів під новий дизайн */
+        /* Стилі інпутів */
         .iti { width: 100%; }
         .iti__flag { background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png"); }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -88,7 +88,6 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Стилі для карток галереї */
         .gallery-card {
             background-color: #F9F9F9;
             display: flex;
@@ -98,7 +97,6 @@
             position: relative;
         }
 
-        /* Анімація для нижньої кнопки */
         #sticky-cta {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
@@ -113,9 +111,9 @@
             pointer-events: auto;
         }
         
-        /* Додаткова тінь для читабельності тексту поверх фото */
+        /* Тінь для читабельності тексту поверх фото */
         .text-glow {
-            text-shadow: 0 2px 15px rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 1);
         }
     </style>
 </head>
@@ -124,68 +122,66 @@
     <!-- HERO SECTION -->
     <section id="hero-section" class="relative min-h-[100dvh] flex flex-col justify-center pb-4 overflow-hidden bg-mono-bg">
         
-        <!-- Фонове зображення із збереженням видимості -->
+        <!-- Фонове зображення -->
         <div class="absolute inset-0 z-0 overflow-hidden bg-[#F9F9F9]">
-            <img src="IMG_2527.jpg" 
+            <img src="IMG_2516.jpg" 
                  alt="Victoria Meshcheriakova" 
                  class="w-full h-full object-cover object-center opacity-95">
             
-            <!-- Заблюрена тінь ПУЩЕНА НИЖЧЕ (top-[60%]), щоб звільнити верхню частину фото -->
-            <div class="absolute top-[60%] md:top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[160%] md:w-[80%] h-[75%] md:h-[85%] bg-[#F9F9F9]/75 blur-[45px] rounded-full z-10 pointer-events-none"></div>
-            <div class="absolute top-[60%] md:top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] md:w-[60%] h-[65%] md:h-[65%] bg-[#F9F9F9]/55 backdrop-blur-md blur-[20px] rounded-full z-10 pointer-events-none"></div>
+            <!-- Заблюрена тінь ПІДНЯТА вище для тексту, але верхнє фото чисте -->
+            <div class="absolute top-[50%] md:top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[160%] md:w-[80%] h-[75%] md:h-[85%] bg-[#F9F9F9]/80 blur-[40px] rounded-full z-10 pointer-events-none"></div>
+            <div class="absolute top-[50%] md:top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[130%] md:w-[60%] h-[60%] md:h-[65%] bg-[#F9F9F9]/60 backdrop-blur-md blur-[15px] rounded-full z-10 pointer-events-none"></div>
             
-            <!-- Легкий градієнт зверху (зменшено висоту до h-20, щоб не перекривав обличчя) -->
-            <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#F9F9F9]/70 to-transparent z-10 pointer-events-none"></div>
             <!-- Плавний перехід внизу в наступний блок -->
             <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F9F9F9] to-transparent z-10 pointer-events-none"></div>
         </div>
 
-        <!-- Контейнер контенту -->
-        <div class="container mx-auto px-6 relative z-20 w-full max-w-lg md:max-w-3xl flex flex-col items-center text-center mt-24 md:mt-16">
+        <!-- Контейнер контенту (ЗМЕНШЕНО ВІДСТУПИ, щоб кнопка влізла в екран) -->
+        <div class="container mx-auto px-4 relative z-20 w-full max-w-lg md:max-w-3xl flex flex-col items-center text-center mt-12 md:mt-16">
             
             <!-- Бейдж -->
-            <div class="inline-block border-b border-black pb-1 mb-6">
+            <div class="inline-block border-b border-black pb-1 mb-4">
                 <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-black text-glow">Персональний розбір</p>
             </div>
 
             <!-- Головний Оффер -->
-            <h1 class="font-serif text-[26px] md:text-3xl lg:text-4xl font-bold leading-[1.3] text-black mb-6 tracking-tight relative text-glow">
+            <h1 class="font-serif text-[26px] xs:text-[28px] md:text-3xl lg:text-4xl font-bold leading-[1.25] text-black mb-4 tracking-tight relative text-glow">
                 ОТРИМАЙ готову схему роботи з контентом і візуалом <span class="italic font-normal text-gray-700">під твою нішу</span>, яка зробить ведення профілю <span class="font-light uppercase tracking-widest text-gray-800">ПРОСТІШИМ</span>
             </h1>
 
-            <!-- Підзаголовок -->
-            <div class="max-w-[280px] md:max-w-lg border-l-2 border-black pl-5 mb-10 mx-auto bg-white/40 backdrop-blur-sm p-3 rounded-r-lg shadow-sm">
-                <p class="font-sans text-xs md:text-base font-bold text-gray-900 leading-relaxed text-left">
-                    і приводитиме клієнтів та співпрацю БЕЗ хаосу, ЩОДЕННИХ ЗЙОМОК ТА втрати часу.
+            <!-- Підзаголовок (РОЗШИРЕНО, ЗМЕНШЕНО ВІДСТУП ЗВЕРХУ) -->
+            <div class="w-[95%] max-w-[400px] border-l-2 border-black pl-4 mb-5 mx-auto bg-white/50 backdrop-blur-sm py-2.5 pr-2 rounded-r-lg shadow-sm">
+                <p class="font-sans text-[13px] md:text-sm font-bold text-gray-900 leading-snug text-left">
+                    і приводитиме клієнтів БЕЗ хаосу, ЩОДЕННИХ ЗЙОМОК ТА втрати часу.
                 </p>
             </div>
 
-            <!-- Ціна та Таймер -->
-            <div class="w-full max-w-[320px] mx-auto flex flex-col gap-4 mb-8">
+            <!-- Ціна та Таймер (КОМПАКТНІШЕ) -->
+            <div class="w-full max-w-[280px] mx-auto flex flex-col gap-2 mb-6">
                 
-                <!-- Блок Ціни -->
-                <div class="bg-white/90 backdrop-blur-md rounded-none p-6 text-center shadow-sm relative overflow-hidden border border-gray-200">
-                    <div id="ui-price-old" class="text-mono-grey line-through font-medium text-sm mb-1">
+                <!-- Блок Ціни (ВУЖЧИЙ) -->
+                <div class="bg-white/90 backdrop-blur-md rounded-none py-3.5 px-6 text-center shadow-sm relative overflow-hidden border border-gray-200">
+                    <div id="ui-price-old" class="text-mono-grey line-through font-medium text-xs mb-0.5">
                         1790 грн
                     </div>
-                    <div id="ui-price-main" class="text-4xl font-serif font-bold text-black leading-none">
+                    <div id="ui-price-main" class="text-[32px] font-serif font-bold text-black leading-none">
                         390 грн
                     </div>
                 </div>
 
-                <!-- Блок Таймера -->
-                <div class="border border-gray-300 rounded-none py-3 px-4 text-center bg-white/70 backdrop-blur-md">
-                    <p class="text-black text-[10px] md:text-xs font-bold uppercase tracking-widest mb-0 inline-flex items-center gap-2">
+                <!-- Блок Таймера (КОМПАКТНІШИЙ) -->
+                <div class="border border-gray-300 rounded-none py-2 px-4 text-center bg-white/70 backdrop-blur-md">
+                    <p class="text-black text-[10px] font-bold uppercase tracking-widest mb-0 inline-flex items-center gap-2">
                         до збільшення ціни: 
-                        <span id="hero-timer" class="text-black text-lg font-serif font-bold">10:00</span>
+                        <span id="hero-timer" class="text-black text-[15px] font-serif font-bold">10:00</span>
                     </p>
                 </div>
 
             </div>
 
             <!-- Кнопка -->
-            <div class="w-full max-w-xs mx-auto">
-                 <button onclick="openModal()" class="w-full bg-black text-white px-8 py-4 font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs hover:bg-gray-800 transition-colors shadow-xl flex items-center justify-center gap-3">
+            <div class="w-full max-w-[280px] mx-auto">
+                 <button onclick="openModal()" class="w-full bg-black text-white px-8 py-3.5 font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs hover:bg-gray-800 transition-colors shadow-xl flex items-center justify-center gap-3">
                     <span>Хочу розбір</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5">
                         <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
